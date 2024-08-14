@@ -1,7 +1,7 @@
 import requests
 from bs4 import BeautifulSoup as bs
 import pandas as pd
-import csv
+
 url = 'https://screener.in/company/ADANIPORTS/consolidated/' #f'https://screener.in/company/{n50_company_list[1]}/consolidated/'
 webpage = requests.get(url)
 soup = bs(webpage.text,'html.parser')
