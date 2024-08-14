@@ -3,6 +3,8 @@ import requests
 from bs4 import BeautifulSoup as bs
 import pandas as pd
 import csv
+import psycopg2
+from sqlalchemy import create_engine
 url = 'https://screener.in/company/RELIANCE/consolidated/' 
 webpage = requests.get(url)
 soup = bs(webpage.text,'html.parser')
