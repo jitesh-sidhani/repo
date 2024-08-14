@@ -25,7 +25,7 @@ with open("table_data.csv", 'w', newline='') as file:
 
 
 df_table = pd.DataFrame(table_data)
-df_table.iloc
+df_table.iloc[0,0] = 'Section'
 df_table.columns = df_table.iloc[0]
 df_table = df_table[1:]
 print(df_table)
