@@ -30,9 +30,9 @@ print(df_table)
 
 
 db_host = "172.27.80.1"
-db_name = "reliance"
-db_user = "docker"
-db_password = "docker"
+db_name = "concourse"
+db_user = "concourse_user"
+db_password = "concourse_pass"
 db_port = "5432"
 
 engine = create_engine(f'postgresql+psycopg2://{db_user}:{db_password}@{db_host}:{db_port}/{db_name}')
