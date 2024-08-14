@@ -40,7 +40,7 @@ db_port = "5432"
 engine = create_engine(f'postgresql+psycopg2://{db_user}:{db_password}@{db_host}:{db_port}/{db_name}')
 
 # Load the DataFrame into the PostgreSQL database
-df_table.to_sql('profit_loss_data', engine, if_exists='replace', index=False)
+df_table.to_sql('profit_loss_data', engine, if_exists='replace', index=True)
 
 print("Data loaded successfully into PostgreSQL database!")
 
