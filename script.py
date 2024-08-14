@@ -32,7 +32,7 @@ print(df_table)
 
 
 db_host = "172.27.80.1"
-db_name = "reliance"
+db_name = "jiteshdb"
 db_user = "docker"
 db_password = "docker"
 db_port = "5432"
