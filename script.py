@@ -26,19 +26,19 @@ df_table.columns = df_table.iloc[0]
 
 df_table = df_table.iloc[1:,:-1]
 
-# Transpose the dataframe
+# Convert numeric columns
+for i in df_table.iloc[:, 1:].columns:
+    df_table[i] = df_table[i].str.replace(',', '').str.replace('%', '').apply(eval)
+
+# Transpose the DataFrame
 df_table_transposed = df_table.transpose()
 
-# Reset the index to get a clean column name
-df_table_transposed.reset_index(inplace=True)
+# Assign new column names
+df_table_transposed.columns = df_table_transposed.iloc[0]
 
-# Rename the columns
-df_table_transposed.columns = ['Section', 'Values']
+# Drop the first row
+df_table_transposed = df_table_transposed.iloc[1:]
 
-# Now you can load the transposed dataframe to PostgreSQL
-df_table_transposed.to_sql('profit_loss_data_transposed', engine, if_exists='replace', index=False)
-
-print("Data loaded to PostgreSQL")
 
 
 db_host = "172.27.80.1" #"192.168.29.101"
