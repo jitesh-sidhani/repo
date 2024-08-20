@@ -23,23 +23,13 @@ for row in tdata.find_all('tr'):
 df_table = pd.DataFrame(table_data)
 df_table.iloc[0,0] = 'Section'
 df_table.columns = df_table.iloc[0]
-
 df_table = df_table.iloc[1:,:-1]
+for i in df_table.iloc[:,1:].columns:
+    df_table[i] = df_table[i].str.replace(',','').str.replace('%','').apply(eval)
 
-# Convert numeric columns
-for i in df_table.iloc[:, 1:].columns:
-    df_table[i] = df_table[i].str.replace(',', '').str.replace('%', '').apply(eval)
-
-# Transpose the DataFrame
-df_table_transposed = df_table.transpose()
-
-# Assign new column names
+df_table_transposed = df_table.T
 df_table_transposed.columns = df_table_transposed.iloc[0]
-
-# Drop the first row
-df_table_transposed = df_table_transposed.iloc[1:]
-
-
+df_table_transposed = df_table_transposed[1:]
 
 db_host = "172.27.80.1" #"192.168.29.101"
 db_name = "exampledb"
