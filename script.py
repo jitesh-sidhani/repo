@@ -23,9 +23,22 @@ for row in tdata.find_all('tr'):
 df_table = pd.DataFrame(table_data)
 df_table.iloc[0,0] = 'Section'
 df_table.columns = df_table.iloc[0]
+
 df_table = df_table.iloc[1:,:-1]
-for i in df_table.iloc[:,1:].columns:
-    df_table[i] = df_table[i].str.replace(',','').str.replace('%','').apply(eval)
+
+# Transpose the dataframe
+df_table_transposed = df_table.transpose()
+
+# Reset the index to get a clean column name
+df_table_transposed.reset_index(inplace=True)
+
+# Rename the columns
+df_table_transposed.columns = ['Section', 'Values']
+
+# Now you can load the transposed dataframe to PostgreSQL
+df_table_transposed.to_sql('profit_loss_data_transposed', engine, if_exists='replace', index=False)
+
+print("Data loaded to PostgreSQL")
 
 
 db_host = "172.27.80.1" #"192.168.29.101"
