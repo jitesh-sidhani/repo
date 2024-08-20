@@ -44,6 +44,8 @@ df_table_transposed = df_table.T
 df_table_transposed.columns = df_table_transposed.iloc[0]
 df_table_transposed = df_table_transposed[1:]
 
+df_table_transposed.index.name= "year_month"
+
 db_host = "172.27.80.1" #"192.168.29.101"
 db_name = "exampledb"
 db_user = "docker"
