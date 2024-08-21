@@ -46,6 +46,9 @@ df_table_transposed = df_table_transposed[1:]
 
 df_table_transposed.index.name= "year_month"
 
+# Reset index to make 'year_month' a column
+df_table_transposed.reset_index(inplace=True)
+
 db_host = "172.27.80.1" #"192.168.29.101"
 db_name = "exampledb"
 db_user = "docker"
@@ -60,7 +63,6 @@ df_table_transposed.to_sql('profit_loss_data_transposed', engine, if_exists='rep
 
 print("Data loaded successfully into PostgreSQL database!")
  
-
 
 
 
