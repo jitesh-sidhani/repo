@@ -4,7 +4,14 @@ import pandas as pd
 import psycopg2
 from sqlalchemy import create_engine
 import os
-name=os.getenv('VAULT_USERNAME')
+
+stock_code = os.environ.get('STOCK_CODE')
+username = os.environ.get('USERNAME')
+password = os.environ.get('PASSWORD')
+
+print(stock_code)
+print(username)
+print(password)
 
 # # URL of the webpage
 # url = 'https://screener.in/company/RELIANCE/consolidated/'
@@ -64,7 +71,7 @@ name=os.getenv('VAULT_USERNAME')
 # df_table_transposed.to_sql('profit_loss_data_transposed', engine, if_exists='replace', index=True)
 
 
-print(name)
+
 
 print("Data loaded successfully into PostgreSQL database!")
  
