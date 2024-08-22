@@ -27,6 +27,12 @@ def login(username, password):
 driver = webdriver.Chrome()
 driver.maximize_window()
 driver.get("https://www.screener.in/company/RELIANCE/consolidated/")
+
+export = WebDriverWait(driver, 5).until(
+    EC.element_to_be_clickable((By.XPATH, '//*[contains(concat( " ", @class, " " ), concat( " ", "icon-download", " " ))]'))
+)
+export.click()
+
 login(os.environ['VAULT_USERNAME'], os.environ['VAULT_PASSWORD'])
 
 export = WebDriverWait(driver, 5).until(
