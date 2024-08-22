@@ -2,10 +2,13 @@
 
 import os
 
-stock_code = os.environ.get('STOCK_CODE')
-username = os.environ.get('USERNAME')
-password = os.environ.get('PASSWORD')
+stock_code = os.environ('STOCK_CODE')
+username = os.environ('USERNAME')
+password = os.environ('PASSWORD')
 
+
+print(stock_code)
+print(username)
 
 
 
