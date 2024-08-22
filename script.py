@@ -4,8 +4,7 @@ import pandas as pd
 import psycopg2
 from sqlalchemy import create_engine
 
-stock_name = os.environ.get('STOCK')
-print("Fetched Stock:", stock_name)
+
 
 # URL of the webpage
 url = 'https://screener.in/company/RELIANCE/consolidated/'
@@ -63,6 +62,9 @@ engine = create_engine(f'postgresql+psycopg2://{db_user}:{db_password}@{db_host}
 
 # Load the transposed DataFrame into the PostgreSQL database
 df_table_transposed.to_sql('profit_loss_data_transposed', engine, if_exists='replace', index=True)
+
+stock_name = os.environ.get('STOCK')
+print("Fetched Stock:", stock_name)
 
 print("Data loaded successfully into PostgreSQL database!")
  
