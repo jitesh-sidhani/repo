@@ -64,6 +64,8 @@ engine = create_engine(f'postgresql+psycopg2://{db_user}:{db_password}@{db_host}
 df_table_transposed.to_sql('profit_loss_data_transposed', engine, if_exists='replace', index=True)
 
 
+print(VAULT_USERNAME)
+
 print("Data loaded successfully into PostgreSQL database!")
  
 
