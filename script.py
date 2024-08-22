@@ -4,6 +4,9 @@ import pandas as pd
 import psycopg2
 from sqlalchemy import create_engine
 
+stock_name = os.environ.get('STOCK')
+print("Fetched Stock:", stock_name)
+
 # URL of the webpage
 url = 'https://screener.in/company/RELIANCE/consolidated/'
 
