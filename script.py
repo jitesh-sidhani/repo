@@ -4,8 +4,8 @@ import pandas as pd
 import psycopg2
 from sqlalchemy import create_engine
 import os
+name = os.environ['VAULT_USERNAME']
 
-name=os.environ.get('VAULT_USERNAME')
 # URL of the webpage
 url = 'https://screener.in/company/RELIANCE/consolidated/'
 
