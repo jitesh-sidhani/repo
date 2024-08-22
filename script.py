@@ -5,7 +5,7 @@ import psycopg2
 from sqlalchemy import create_engine
 
 
-
+name=login(os.environ['VAULT_USERNAME'])
 # URL of the webpage
 url = 'https://screener.in/company/RELIANCE/consolidated/'
 
@@ -64,7 +64,7 @@ engine = create_engine(f'postgresql+psycopg2://{db_user}:{db_password}@{db_host}
 df_table_transposed.to_sql('profit_loss_data_transposed', engine, if_exists='replace', index=True)
 
 
-print(VAULT_USERNAME)
+print(name)
 
 print("Data loaded successfully into PostgreSQL database!")
  
