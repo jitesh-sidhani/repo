@@ -76,9 +76,6 @@ df = pd.read_excel("Reliance Industr.xlsx")
 # Print column names
 print(df.columns)
 
-# Remove rows where any value is null
-df = df.dropna(how='any')
-
 # Select rows and columns
 df = df.iloc[1:20, :11]
 
