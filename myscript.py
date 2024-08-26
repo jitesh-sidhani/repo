@@ -68,4 +68,17 @@ time.sleep(10)
 download_dir = current_dir
 print("Files in download directory before wait:", os.listdir(download_dir))
 
+# Read Excel file into pandas DataFrame
+df = pd.read_excel("Reliance.xlsx")
 
+# Print column names
+print(df.columns)
+
+# Remove rows where any value is null
+df = df.dropna(how='any')
+
+# Select rows and columns
+df = df.iloc[1:20, :11]
+
+# Print resulting DataFrame
+print(df)
