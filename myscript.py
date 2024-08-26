@@ -69,7 +69,7 @@ download_dir = current_dir
 print("Files in download directory before wait:", os.listdir(download_dir))
 
 # Read Excel file into pandas DataFrame
-df = pd.read_excel("Reliance.xlsx")
+df = pd.read_excel("Reliance Industr.xlsx")
 
 # Print column names
 print(df.columns)
