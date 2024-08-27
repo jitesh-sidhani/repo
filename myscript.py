@@ -79,7 +79,7 @@ while True:
     time.sleep(1)
 
 # Read Excel file into pandas DataFrame
-df = pd.read_excel(os.path.join(download_dir, "Reliance Industr.xlsx"))
+df = pd.read_excel(os.path.join(download_dir, "Reliance Industr.xlsx"),header=0)
 
 # Read Excel file into pandas DataFrame
 # df = pd.read_excel("Reliance Industr.xlsx")
