@@ -71,24 +71,32 @@ download_dir = current_dir
 print("Files in download directory before wait:", os.listdir(download_dir))
 
 
-# Wait for the file to be downloaded
-while True:
-    files = os.listdir(download_dir)
-    if "Reliance Industr.xlsx" in files:
-        break
-    time.sleep(1)
 
 # Read Excel file into pandas DataFrame
-df = pd.read_excel(os.path.join(download_dir, "Reliance Industr.xlsx"),header=0)
+# df = pd.read_excel(os.path.join(download_dir, "Reliance Industr.xlsx"),header=0)
 
-# Read Excel file into pandas DataFrame
-# df = pd.read_excel("Reliance Industr.xlsx")
+# # Read Excel file into pandas DataFrame
+# # df = pd.read_excel("Reliance Industr.xlsx")
+
+# # Print column names
+# print(df.columns)
+
+# # Select rows and columns
+# df = df.iloc[1:20, :11]
+
+# # Print resulting DataFrame
+# print(df)
+
+
+
+df = pd.read_excel("Reliance.xlsx", sheet_name="Data Sheet")
 
 # Print column names
 print(df.columns)
 
 # Select rows and columns
-df = df.iloc[1:20, :11]
+df = df.iloc[14:30, :11]
 
+# df.head(3)
 # Print resulting DataFrame
 print(df)
