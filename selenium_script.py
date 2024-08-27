@@ -114,7 +114,7 @@ db_port = "5432"
 engine = create_engine(f'postgresql+psycopg2://{db_user}:{db_password}@{db_host}:{db_port}/{db_name}')
 
 # Load the transposed DataFrame into the PostgreSQL database
-df_table_transposed.to_sql('new_df', engine, if_exists='replace', index=True)
+df.to_sql('new_df', engine, if_exists='replace', index=True)
 
 
 
