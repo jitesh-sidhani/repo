@@ -88,7 +88,7 @@ print("Files in download directory before wait:", os.listdir(download_dir))
 # # Print resulting DataFrame
 # print(df)
 
-col = ["Mar-13", "Mar-14", "Mar-15", "Mar-16", "Mar-17", "Mar-18", "Mar-19", "Mar-20", "Mar-21", "Mar-22", "Mar-23", "Mar-24"]
+col = ["Section", "Mar-15", "Mar-16", "Mar-17", "Mar-18", "Mar-19", "Mar-20", "Mar-21", "Mar-22", "Mar-23", "Mar-24"]
 
 df = pd.read_excel("Reliance Industr.xlsx", sheet_name="Data Sheet", skiprows=1, header=None, names=col)
 
