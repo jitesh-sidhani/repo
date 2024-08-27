@@ -100,3 +100,22 @@ df = df.iloc[14:30, :11]
 # df.head(3)
 # Print resulting DataFrame
 print(df)
+
+
+
+db_host = "172.27.80.1" #"192.168.29.101"
+db_name = "exampledb"
+db_user = "docker"
+db_password = "docker"
+db_port = "5432"
+
+# Create the database engine
+engine = create_engine(f'postgresql+psycopg2://{db_user}:{db_password}@{db_host}:{db_port}/{db_name}')
+
+# Load the transposed DataFrame into the PostgreSQL database
+df_table_transposed.to_sql('new_df', engine, if_exists='replace', index=True)
+
+
+
+
+print("Data loaded successfully into PostgreSQL database!")
