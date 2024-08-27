@@ -9,6 +9,7 @@ import time
 import os
 import pandas as pd
 from openpyxl import load_workbook
+from sqlalchemy import create_engine
 
 chrome_options = Options()
 chrome_options.add_argument("--headless")  # Run in headless mode
