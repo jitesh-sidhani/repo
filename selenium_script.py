@@ -106,7 +106,7 @@ df = pd.read_excel("Reliance Industr.xlsx", sheet_name="Data Sheet", skiprows=1,
 print(df.columns)
 
 # Select rows and columns
-df = df.iloc[14:30, :11]
+df = df.iloc[15:30, :11]
 
 # Print resulting DataFrame
 print(df)
