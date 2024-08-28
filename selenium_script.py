@@ -18,6 +18,12 @@ chrome_options.add_argument("--no-sandbox")
 chrome_options.add_argument("--disable-dev-shm-usage")
 chrome_options.add_argument("--window-size=1920,1080")
 
+
+
+username = os.environ.get('USERNAME')
+password = os.environ.get('PASSWORD')
+stock_code = os.environ.get('STOCK_CODE')
+
 current_dir = os.getcwd()
 prefs = {
     "download.default_directory": current_dir,
