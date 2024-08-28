@@ -108,6 +108,9 @@ print(df.columns)
 # Select rows and columns
 df = df.iloc[15:30, :11]
 
+stock_code = os.environ.get('STOCK_CODE')
+df['Stock_Code'] = stock_code
+
 # Print resulting DataFrame
 print(df)
 
