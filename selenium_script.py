@@ -63,7 +63,9 @@ def login(username, password):
 
 
 
-driver.get("https://www.screener.in/company/RELIANCE/consolidated/")
+# driver.get("https://www.screener.in/company/RELIANCE/consolidated/")
+driver.get("https://www.screener.in/company/ZOMATO/consolidated/")
+
 
 export = WebDriverWait(driver, 10).until(
     EC.element_to_be_clickable((By.XPATH, '//*[contains(concat( " ", @class, " " ), concat( " ", "icon-download", " " ))]'))
