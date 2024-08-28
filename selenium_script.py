@@ -105,7 +105,6 @@ col = ["Section", "Mar-15", "Mar-16", "Mar-17", "Mar-18", "Mar-19", "Mar-20", "M
 # df = pd.read_excel("Reliance Industr.xlsx", sheet_name="Data Sheet", skiprows=1, header=None, names=col)
 df = pd.read_excel("Kotak Mah. Bank.xlsx", sheet_name="Data Sheet", skiprows=1, header=None, names=col)
 
-# Print column names
 print(df.columns)
 
 # Select rows and columns
@@ -113,11 +112,7 @@ df = df.iloc[15:30, :11]
 
 stock_code = os.environ.get('STOCK_CODE')
 df['Stock_Code'] = stock_code
-
-# Print resulting DataFrame
 print(df)
-
-
 
 
 db_host = "172.27.80.1" #"192.168.29.101"
@@ -126,13 +121,9 @@ db_user = "docker"
 db_password = "docker"
 db_port = "5432"
 
-# Create the database engine
 engine = create_engine(f'postgresql+psycopg2://{db_user}:{db_password}@{db_host}:{db_port}/{db_name}')
 
 # Load the transposed DataFrame into the PostgreSQL database
 df.to_sql('companies_data', engine, if_exists='append', index=False)
-
-
-
 
 print("Data loaded successfully into PostgreSQL database!")
