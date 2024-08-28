@@ -24,6 +24,9 @@ username = os.environ.get('USERNAME')
 password = os.environ.get('PASSWORD')
 stock_code = os.environ.get('STOCK_CODE')
 
+print(username)
+print(password)
+
 current_dir = os.getcwd()
 prefs = {
     "download.default_directory": current_dir,
