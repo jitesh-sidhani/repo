@@ -67,7 +67,8 @@ export = WebDriverWait(driver, 10).until(
 )
 export.click()
 
-login("firstscreener123@gmail.com", "Asdf!234")
+login(username, password)
+# login("firstscreener123@gmail.com", "Asdf!234")
 
 export = WebDriverWait(driver, 10).until(
     EC.element_to_be_clickable((By.XPATH, '//*[contains(concat( " ", @class, " " ), concat( " ", "icon-download", " " ))]'))
