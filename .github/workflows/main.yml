@@ -13,11 +13,11 @@ jobs:
           python-version: '3.9'
       - name: Install Linux dependencies
         run: |
-          apt-get update
-          apt-get install -y wget unzip curl libxi6 libgconf-2-4 libnss3 libgbm-dev xdg-utils
-          wget (link unavailable)
+          sudo apt-get update
+          sudo apt-get install -y wget unzip curl libxi6 libgconf-2-4 libnss3 libgbm-dev xdg-utils
+          wget https://dl.google.com/ME"
           dpkg -i google-chrome-stable_current_amd64.deb || apt-get install -f -y
-          wget (link unavailable)
+          wget https://storage.googleapis.com/chrome-for-testing-public/128.0.6613.84/linux64/chromedriver-linux64.zip
           unzip chromedriver-linux64.zip
           mv chromedriver-linux64/chromedriver /usr/local/bin/chromedriver
           chmod +x /usr/local/bin/chromedriver
