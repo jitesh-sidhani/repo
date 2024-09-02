@@ -12,6 +12,6 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
       - name: Run script
-        run: python selenium_script.py
+        run: python selenium_working_in_jupyter.py
 
  
