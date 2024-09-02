@@ -4,3 +4,5 @@ hvac
 openpyxl
 sqlalchemy
 psycopg2
+requests
+beautifulsoup4
