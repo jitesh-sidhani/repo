@@ -57,18 +57,18 @@ df_table_transposed.index.name= "year_month"
 
 # Reset index to make 'year_month' a column
 df_table_transposed.reset_index(inplace=True)
+print(df_table_transposed)
+# db_host = "172.27.80.1" #"192.168.29.101"
+# db_name = "exampledb"
+# db_user = "docker"
+# db_password = "docker"
+# db_port = "5432"
 
-db_host = "172.27.80.1" #"192.168.29.101"
-db_name = "exampledb"
-db_user = "docker"
-db_password = "docker"
-db_port = "5432"
+# # Create the database engine
+# engine = create_engine(f'postgresql+psycopg2://{db_user}:{db_password}@{db_host}:{db_port}/{db_name}')
 
-# Create the database engine
-engine = create_engine(f'postgresql+psycopg2://{db_user}:{db_password}@{db_host}:{db_port}/{db_name}')
-
-# Load the transposed DataFrame into the PostgreSQL database
-df_table_transposed.to_sql('profit_loss_data_transposed', engine, if_exists='replace', index=True)
+# # Load the transposed DataFrame into the PostgreSQL database
+# df_table_transposed.to_sql('profit_loss_data_transposed', engine, if_exists='replace', index=True)
 
 
 
