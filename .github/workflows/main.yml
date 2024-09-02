@@ -1,17 +1,30 @@
 on: push
+
 jobs:
   run-script:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
+
       - name: Set up Python
         uses: actions/setup-python@v2
         with:
           python-version: '3.9'
-      - name: Install dependencies
+
+      - name: Install Linux dependencies
+        run: |
+          apt-get update
+          apt-get install -y wget unzip curl libxi6 libgconf-2-4 libnss3 libgbm-dev xdg-utils
+          wget (link unavailable)
+          dpkg -i google-chrome-stable_current_amd64.deb || apt-get install -f -y
+          wget (link unavailable)
+          unzip chromedriver-linux64.zip
+          mv chromedriver-linux64/chromedriver /usr/local/bin/chromedriver
+          chmod +x /usr/local/bin/chromedriver
+
+      - name: Install Python dependencies
         run: pip install -r requirements.txt
+
       - name: Run script
         run: python selenium_script.py
-
- 
