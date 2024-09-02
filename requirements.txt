@@ -1,13 +1,3 @@
-wget
-unzip
-curl
-libxi6
-libgconf-2-4
-libnss3
-libgbm-dev
-xdg-utils
-google-chrome-stable
-chromedriver
 selenium
 pandas
 hvac
